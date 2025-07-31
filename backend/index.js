@@ -13,6 +13,8 @@ const __dirname = path.resolve();
 
 dotenv.config();
 
+console.log('MONGODB_CONNECT:', process.env.MONGODB_CONNECT);
+
 
 app.use(express.json());
 app.use(cookieParser())
