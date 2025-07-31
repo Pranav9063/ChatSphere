@@ -1,5 +1,5 @@
 import express from "express"
-import { getMessages, sendMessage } from "../routControlers/messageroutControler.js";
+import { getMessages, sendMessage } from "../Controllers/messageroutControler.js";
 import isLogin from "../middleware/isLogin.js";
 
 const router = express.Router();
