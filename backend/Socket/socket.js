@@ -7,7 +7,11 @@
     const server = http.createServer(app);
     const io = new Server(server,{
         cors:{
-            origin:['https://slrtech-chatapp.onrender.com'],
+            origin:[
+                'https://chatsphere-cjyd.onrender.com',
+                'http://localhost:5173',
+                'http://localhost:3000'
+            ],
             methods:["GET","POST"]
         }
     });
@@ -20,7 +24,7 @@
     io.on('connection',(socket)=>{
         const userId = socket.handshake.query.userId;
 
-        if(userId !== "undefine") userSocketmap[userId] = socket.id;
+        if(userId) userSocketmap[userId] = socket.id;
         io.emit("getOnlineUsers",Object.keys(userSocketmap))
 
         socket.on('disconnect',()=>{
