@@ -1,3 +1,7 @@
+import PropTypes from 'prop-types';
+SocketContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 import { createContext, useContext, useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import { useAuth } from './AuthContext';
@@ -14,7 +18,7 @@ export const SocketContextProvider=({children})=>{
     const {authUser} = useAuth();
     useEffect(()=>{
         if(authUser){
-            const socket = io("https://slrtech-chatapp.onrender.com/",{
+            const socket = io("https://chatsphere-cjyd.onrender.com/",{
                 query:{
                     userId:authUser?._id,
                 }
