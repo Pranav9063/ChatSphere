@@ -1,7 +1,4 @@
 import PropTypes from 'prop-types';
-SocketContextProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 import { createContext, useContext, useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import { useAuth } from './AuthContext';
@@ -41,3 +38,7 @@ export const SocketContextProvider=({children})=>{
     </SocketContext.Provider>
     )
 }
+
+SocketContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
