@@ -1,9 +1,9 @@
 import express from "express"
 import dotenv from 'dotenv'
 import dbConnect from "./DB/dbConnect.js";
-import authRouter from  './rout/authUser.js'
-import messageRouter from './rout/messageRout.js'
-import userRouter from './rout/userRout.js'
+import authRouter from  './routes/authUser.js'
+import messageRouter from './routes/messageRout.js'
+import userRouter from './routes/userRout.js'
 import cookieParser from "cookie-parser";
 import path from "path";
 
